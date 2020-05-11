@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--
+	ustora by freshdesignweb.com
+	Twitter: https://twitter.com/freshdesignweb
+	URL: https://www.freshdesignweb.com/ustora/
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Checkout Page - Ustora Demo</title>
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/formsuasanpham.css">
+
+	<script type="text/javascript" src="js/sanpham.js"></script>
+	<script type="text/javascript" src="js/hotro.js"></script>
+	<script type="text/javascript" src="js/giohang.js"></script>
+	<script src="js/kiemTra.js"></script>
+
+
+</head>
+<body>
+	<div class="khung-sua-san-pham" id = "khungSuaSanPham">
+		<div class ="khung-form">
+			<div class="form-sua">
+				<h4>Chỉnh sửa sản phẩm</h4>
+				<div class="khung-input-chinh-sua">
+					<label for="usr">Tên Sản Phẩm:</label>
+					<input type="text" class="form-control" id="tenSanPham" name="tenSanPham" >
+					<span id="errTenSanPham" style="color: red"></span>
+				</div>
+				<div class="khung-input-chinh-sua">
+					<label for="pwd">Giá Bán:</label>
+					<input type="text" class="form-control" id="giaBan" name="giaBan" >
+					<span id="errGiaBan" style="color: red"></span>
+				</div>
+				<label for="pwd">Hình ảnh:</label>
+				<div class="khung-input-chinh-sua">
+					<input type="text" class="form-control"  name="hinhAnh" id="hinhAnh">
+					<span id="errHinhAnh" style="color: red"></span>
+				</div>
+				<div class="khung-input-chinh-sua">
+					<label for="pwd">Phần trăm giảm giá:</label>
+					<input type="text" class="form-control" id="phanTramGiamGia" name="phanTramGiamGia" >
+					<span id="errPhanTramGiamGia" style="color: red"></span>
+				</div>
+				<div class="khung-input-chinh-sua">
+					<label for="pwd">Khu vực:</label>
+					<input type="text" class="form-control" id="khuVuc" name="khuVuc">
+					<span id="errKhuVuc" style="color: red"></span>
+				</div>
+				<div class = "khung-button-sua">
+					<button class ="button-sua button-xac-nhan" onclick="onClickXacNhanSua()">Xác Nhận</button>
+					<button class ="button-sua button-thoat" onclick="onClickThoatSua()">Thoát</button>
+				</div>
+				
+				   
+			</div>
+		</div>
+			
+	</div>
+	<div class="header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="user-menu">
+						<ul>
+							<li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
+							<li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
+							<li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+							<li><a href="loginform.html"><i class="fa fa-user"></i> Login</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="header-right">
+						<ul class="list-unstyled list-inline">
+							<li class="dropdown dropdown-small">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">USD</a></li>
+									<li><a href="#">INR</a></li>
+									<li><a href="#">GBP</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown dropdown-small">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">English</a></li>
+									<li><a href="#">French</a></li>
+									<li><a href="#">German</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- End header area -->
+
+	<div class="site-branding-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="logo">
+						<h1><a href="index.html"><img src="img/logo.png"></a></h1>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div> <!-- End site branding area -->
+
+	<div class="mainmenu-area">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div> 
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="shop.html">Cửa hàng</a></li> 
+						<li><a href="cart.html">Giỏ hàng</a></li>
+						<li><a href="checkout.html">Thêm sản phẩm</a></li>
+						<li><a href="#">Thể loại </a></li>
+						<li><a href="#">Loại Khác</a></li>
+						<li><a href="#">Liên hệ chúng tôi</a></li>
+					</ul>
+				</div> 
+			</div>
+		</div>
+	</div> <!-- End mainmenu area -->
+
+	<div class="product-big-title-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product-bit-title text-center">
+						<h2>Add Product</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="single-product-area">
+		<div class="zigzag-bottom"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="single-sidebar">
+						<h2 class="sidebar-title">Search Products</h2>
+						<form action="">
+							<input type="text" placeholder="Search products...">
+							<input type="submit" value="Search">
+						</form>
+					</div>
+
+					<div class="single-sidebar">
+						<h2 class="sidebar-title">Products</h2>
+						<div class="thubmnail-recent">
+							<img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+							<h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins> <del>$100.00</del>
+							</div>                             
+						</div>
+						<div class="thubmnail-recent">
+							<img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+							<h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins> <del>$100.00</del>
+							</div>                             
+						</div>
+						<div class="thubmnail-recent">
+							<img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+							<h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins> <del>$100.00</del>
+							</div>                             
+						</div>
+						<div class="thubmnail-recent">
+							<img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+							<h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins> <del>$100.00</del>
+							</div>                             
+						</div>
+					</div>
+
+					<div class="single-sidebar">
+						<h2 class="sidebar-title">Recent Posts</h2>
+						<ul>
+							<li><a href="single-product.html">Sony Smart TV - 2015</a></li>
+							<li><a href="single-product.html">Sony Smart TV - 2015</a></li>
+							<li><a href="single-product.html">Sony Smart TV - 2015</a></li>
+							<li><a href="single-product.html">Sony Smart TV - 2015</a></li>
+							<li><a href="single-product.html">Sony Smart TV - 2015</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-8" >
+					<h4>Danh sách sản phẩm </h4>
+					 <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tên Sản Phẩm</th>
+        <th>Giá Bán(VND)</th>
+        <th>Hình ảnh</th>
+        <th>Giảm giá</th>
+        <th>Khu vực</th>
+        
+      </tr>
+    </thead>
+    <tbody id="danhsach">
+     
+      
+    </tbody>
+  </table>
+				</div>
+				<div class="col-md-8 ">
+					<h4>Form Thêm Sản Phẩm</h4>
+					<div class="product-content-right">
+						<form class="form-group" method="post" action="#" onclick="return kiemTraThemSanPham()">
+							<div class="form-group">
+								<label for="usr">Tên Sản Phẩm:</label>
+								<input type="text" class="form-control" id="ten" name="tenSanPham" >
+								<span id="errTenSanPham" style="color: red"></span>
+							</div>
+							<div class="form-group">
+								<label for="pwd">Giá Bán:</label>
+								<input type="text" class="form-control" id="gia" name="giaBan" >
+								<span id="errGiaBan" style="color: red"></span>
+							</div>
+							<label for="pwd">Hình ảnh:</label>
+							<div class="form-group">
+								<input type="text" class="form-control"  name="hinhAnh" id="hinh">
+								<span id="errHinhAnh" style="color: red"></span>
+							</div>
+							<div class="form-group">
+								<label for="pwd">Phần trăm giảm giá:</label>
+								<input type="text" class="form-control" id="phan" name="phanTramGiamGia" >
+								<span id="errPhanTramGiamGia" style="color: red"></span>
+							</div>
+							<div class="form-group">
+								<label for="pwd">Khu vực:</label>
+								<input type="text" class="form-control" id="khu" name="khuV">
+								<span id="errKhuVuc" style="color: red"></span>
+							</div>
+							<button onclick="kiemTraThemSanPham()" type="submit" class="btn btn-dark">Thêm </button>
+						</form>               
+					</div>                    
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footer-top-area">
+		<div class="zigzag-bottom"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="footer-about-us">
+						<h2>u<span>Stora</span></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+						<div class="footer-social">
+							<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="footer-menu">
+						<h2 class="footer-wid-title">User Navigation </h2>
+						<ul>
+							<li><a href="">My account</a></li>
+							<li><a href="">Order history</a></li>
+							<li><a href="">Wishlist</a></li>
+							<li><a href="">Vendor contact</a></li>
+							<li><a href="">Front page</a></li>
+						</ul>                        
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="footer-menu">
+						<h2 class="footer-wid-title">Categories</h2>
+						<ul>
+							<li><a href="">Mobile Phone</a></li>
+							<li><a href="">Home accesseries</a></li>
+							<li><a href="">LED TV</a></li>
+							<li><a href="">Computer</a></li>
+							<li><a href="">Gadets</a></li>
+						</ul>                        
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="footer-newsletter">
+						<h2 class="footer-wid-title">Newsletter</h2>
+						<p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+						<div class="newsletter-form">
+							<input type="email" placeholder="Type your email">
+							<input type="submit" value="Subscribe">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="copyright">
+						<p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="footer-card-icon">
+						<i class="fa fa-cc-discover"></i>
+						<i class="fa fa-cc-mastercard"></i>
+						<i class="fa fa-cc-paypal"></i>
+						<i class="fa fa-cc-visa"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Latest jQuery form server -->
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+
+	<!-- Bootstrap JS form CDN -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!-- jQuery sticky menu -->
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+
+	<!-- jQuery easing -->
+	<script src="js/jquery.easing.1.3.min.js"></script>
+
+	<!-- Main Script -->
+	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/kiemTra.js"></script>
+
+	<script type="text/javascript">
+
+		var danhSachSanPham = JSON.parse(localStorage.getItem('danhSachSanPham'));
+
+		if (danhSachSanPham == null) 
+			var danhSachSanPham = new Array();
+
+
+		function themSanPhamVaoLocalStorage(){
+        // buoc 1 lay cac gia tri input de thuc hien luu xuong localstorage
+        var  tenSpInPut  = document.getElementById('ten');
+        var ten = tenSpInPut.value;
+        tenSpInPut.value='';
+
+        var giaBanSPInput = document.getElementById('gia');
+        var gia = parseInt(giaBanSPInput.value);
+        giaBanSPInput.value = '';
+
+        var hinhAnhInput = document.getElementById('hinh');
+        var hinh = hinhAnhInput.value;
+        hinhAnhInput.value='';
+
+        var khuVucInput = document.getElementById('khu');
+        var khuvuc = khuVucInput.value;
+        khuvuc.value='';
+
+        var phanTramGiamGiaInput = document.getElementById('phan');
+        var giamGia = phanTramGiamGiaInput.value;
+        phanTramGiamGiaInput.value = '';
+
+         // tao doi tuong tu cac du lieju ng dug nhap vao
+
+         var sanPham = taoDoiTuongSanPham(ten,gia,hinh,khuvuc,giamGia);
+
+         danhSachSanPham.push(sanPham);
+
+         var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+         localStorage.setItem('danhSachSanPham' , jsonDanhSachSanPham);
+
+         console.log("danh sach san pham " + jsonDanhSachSanPham);
+     };
+
+
+ </script>
+ <script type="text/javascript">	
+ 	showProduct();
+ 	function showProduct(){
+ 		var nodeHienthisanpham = document.getElementById('danhsach');
+ 		var HtmlTong = "";
+ 		for (var i = 0; i < danhSachSanPham.length; i++) {
+ 			var HTML = chuyenDoiTuong(danhSachSanPham[i]);
+ 			HtmlTong += HTML;
+ 		}
+ 		nodeHienthisanpham.innerHTML = HtmlTong;
+ 	};
+ 	function chuyenDoiTuong(danhSachSanPham) {
+ 		danhSachSanPham = taoDoiTuongSanPham(danhSachSanPham.tenSanPham ,danhSachSanPham.giaBan, danhSachSanPham.hinhAnh , danhSachSanPham.khuVuc,danhSachSanPham.phanTramGiamGia,danhSachSanPham.id);
+ 		var html =  '    <tr>  '  + 
+ '           <td>'+danhSachSanPham.tenSanPham+'</td>  '  + 
+ '           <td>'+danhSachSanPham.giaBan+'</td>  '  + 
+ '           <td style = "width : 200px;">'+danhSachSanPham.hinhAnh+'</td>  '  + 
+ '           <td>'+danhSachSanPham.phanTramGiamGia+'</td>  '  + 
+ '           <td>'+danhSachSanPham.khuVuc+'</td>  '  + 
+ '           <td><button onclick = "clickNutSua(\''+danhSachSanPham.id+'\')">Sửa</button></td>  '  + 
+ '           <td><button onclick = "clickNutXoa(\''+danhSachSanPham.id+'\')">Xóa</button></td>  '  + 
+ '        </tr>  ' ;
+ 		return html;
+ 	};
+ 	
+ </script>
+ <script src="js/checkout.js"></script>
+ <script>
+	 function kiemTraThemSanPham() {
+           var tenSanPham = document.getElementById('ten').value;
+           var giaBan = document.getElementById('gia').value;
+           var hinhAnh = document.getElementById('hinh').value;
+           var phanTramGiamGia = document.getElementById('phan').value;
+           var khuVuc = document.getElementById('khu').value;
+           
+           var err = true;
+
+           if (tenSanPham.length ==0 ) {
+                document.getElementById('errTenSanPham').innerHTML="Tên sản phẩm không được bỏ trống";
+                err = false;
+           }else{
+            document.getElementById('errTenSanPham').innerHTML='';
+            err = true;          
+            }
+
+           if (giaBan.length==0) {
+                document.getElementById('errGiaBan').innerHTML="Giá bán không được nhỏ hơn 0";
+                err= false;
+           }else{
+            if (giaBan <0) {
+                document.getElementById('errGiaBan').innerHTML = "Giá Bán không âm";
+                err= false;
+            }else{
+              document.getElementById('errGiaBan').innerHTML = "";
+            }
+             
+           }
+
+           if (hinhAnh.length==0) {
+            document.getElementById('errHinhAnh').innerHTML="Hình ảnh không được bỏ trống";
+            err= false;
+           }else{
+            document.getElementById('errHinhAnh').innerHTML=''; 
+            
+           }
+
+            if (phanTramGiamGia.length == 0) {
+                document.getElementById('errPhanTramGiamGia').innerHTML = "Phần trăm giảm giá từ 0-100 %";
+                err=  false;
+           }else{
+            if (phanTramGiamGia <0 || phanTramGiamGia > 100) {
+                document.getElementById('errPhanTramGiamGia').innerHTML = "Phần trăm giảm giá từ 0-100 %";
+                err= false;
+            }else{
+              document.getElementById('errPhanTramGiamGia').innerHTML = "";
+            }
+           }
+
+           if (khuVuc.length==0) {
+            document.getElementById('errKhuVuc').innerHTML="khu vực không được bỏ trống";
+            err= false;
+           }else{
+            document.getElementById('errKhuVuc').innerHTML=''; 
+            
+           }
+
+           if(err){
+            themSanPhamVaoLocalStorage();
+                alert("Thêm sản phẩm thành công");
+            }else{
+                return false;
+            }
+        };
+ </script>
+</body>
+</html>

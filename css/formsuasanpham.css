@@ -1,0 +1,42 @@
+.khung-sua-san-pham{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.khung-form{
+    background-color: #fff;
+    height: 500px;
+    width: 650px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.khung-input-chinh-sua{
+    width: 450px;
+}
+.khung-button-sua{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.button-sua{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.button-xac-nhan{
+    background-color: rgb(29, 165, 47);
+}
+.button-thoat{
+    background-color: rgb(182, 40, 40);
+}
